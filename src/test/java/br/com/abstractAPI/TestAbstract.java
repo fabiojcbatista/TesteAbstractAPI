@@ -175,6 +175,36 @@ public void dadaoAbrstractAPI_QuandoPassarAChaveAPIScrap_entaoDeveRetornarStatus
     .statusCode(200);
 }
 
+@Test
+public void dadaoAbrstractAPI_QuandoPassarAChaveAPIPhone_entaoDeveRetornarStatus200(){
+  given()
+    .log()
+    .all()
+  .when()
+    .get("https://phonevalidation.abstractapi.com/v1/"+
+    "?api_key=3dc80656b362457a868d0df99243faf1"+
+    "&phone=5551994622192")
+  .then()
+    .log()
+    .body()
+    .statusCode(200);
+}
+
+@Test
+public void dadaoAbrstractAPI_QuandoPassarAChaveAPIEmail_entaoDeveRetornarStatus200(){
+  given()
+    .log()
+    .all()
+  .when()
+    .get("https://emailvalidation.abstractapi.com/v1/"+
+    "?api_key=348a06ece95043cca182728d7f40fbc9"+
+    "&email=fabiojcbweb@hotmail.com")
+  .then()
+    .log()
+    .body()
+    .statusCode(200);
+}
+
 
 
 }
