@@ -129,6 +129,52 @@ public class TestAbstract {
       .statusCode(200);
 }
 
+//Erro @Test
+  public void dadaoAbrstractAPI_QuandoPassarAChaveAPIAvatar_entaoDeveRetornarStatus200(){
+    given()
+      .log()
+      .all()
+    .when()
+      .get("https://avatars.abstractapi.com/v1/?apikey=dfb29de9cac7463d8543784d3a64165b&image_size=200&image_format=png&char_limit=2&background_color=335eea&font_color=ffffff&is_rounded=false"+
+      "&is_uppercase=true"+
+      "&is_italic=false"+
+      "&is_bold=false")
+    .then()
+      .log()
+      .body()
+      .statusCode(200);
+}
+
+@Test
+public void dadaoAbrstractAPI_QuandoPassarAChaveAPIScreen_entaoDeveRetornarStatus200(){
+  given()
+    .log()
+    .all()
+  .when()
+    .get("https://screenshot.abstractapi.com/v1/"+
+    "?api_key=13273f691d6f488881fb5e713438d40c"+
+    "&url=https://www.ft.com")
+  .then()
+    .log()
+    .body()
+    .statusCode(200);
+}
+
+@Test
+public void dadaoAbrstractAPI_QuandoPassarAChaveAPIScrap_entaoDeveRetornarStatus200(){
+  given()
+    .log()
+    .all()
+  .when()
+    .get("https://scrape.abstractapi.com/v1/"+
+    "?api_key=ed4c484a3f474b5d82fab425a14ca370"+
+    "&url=https://www.apple.com")
+  .then()
+    .log()
+    .body()
+    .statusCode(200);
+}
+
 
 
 }
